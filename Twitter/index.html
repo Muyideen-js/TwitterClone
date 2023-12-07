@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Twitter Clone</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/all.css">
+  <link rel="stylesheet" href="responsiveness.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&family=Russo+One&family=Secular+One&display=swap"
+    rel="stylesheet">
+  <script defer src="script.js"></script>
+</head>
+
+<body>
+
+  <div class="main-flex-container">
+    <div class="toggle">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-list"
+        viewBox="0 0 16 16">
+        <path fill-rule="evenodd"
+          d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+      </svg>
+    </div>
+    <div class="left-flex-container flex-item">
+      <div class="nav-links">
+        <ul>
+
+          <li class="nav-items logo"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
+                fill="currentColor" class="bi bi-twitter-x" viewBox="0 0 16 16">
+                <path
+                  d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865l8.875 11.633Z" />
+              </svg></a></li>
+          <li class="nav-items current-page"><a href="#"><i class="fas fa-home"></i> Home</a></li>
+          <li class="nav-items" id="Explore"><a href="#"><i class="fas fa-hashtag"></i> Explore</a></li>
+          <li class="nav-items"><a href="#"><i class="far fa-bell"></i> Notifications</a></li>
+          <li class="nav-items"><a href="#"><i class="far fa-envelope"></i> Messages</a></li>
+          <li class="nav-items"><a href="#"><i class="fa-brands fa-x-twitter"></i>Bookmarks</a></li>
+          <li class="nav-items"><a href="#"><i class="far fa-list-alt"></i> Lists</a></li>
+          <li class="nav-items"><a href="#"><i class="far fa-user"></i> Profile</a></li>
+          <li class="nav-items"><a href="#"><i class="fas fa-ellipsis-h more-icon"></i> More</a></li>
+        </ul>
+      </div>
+      <div class="tweet"><a id="TweetModal" href="#">Tweet</a>
+
+      </div>
+
+
+      <div class="profile-box">
+        <img src="./img/profile.jpg" alt="profile">
+        <div class="profile-link">
+          <p class="full-name" style="color: white;">Muyideen.js</p>
+          <p class="user-name">@abolax_123</p>
+        </div>
+        <div class="options-icon"><i class="fas fa-caret-down"></i></div>
+      </div>
+    </div>
+
+    <main id="HOME">
+      <div class="center-flex-container flex-item">
+        <div class="home">
+          <div class="home-txt">
+            <h1>Home</h1>
+          </div>
+          <div class="second-el">
+            <div class="-for-me">
+              <p class="for-you" style="color: white;" id="active">For You</p>
+              <hr id="line">
+            </div>
+            <div class="second-me">
+              <p class="for-you" id="active1">Following</p>
+              <hr id="linesecond">
+            </div>
+          </div>
+        </div>
+
+        <div class="post-tweet">
+          <form action="">
+            <div class="form-group-1">
+              <img src="./img/profile.jpg" alt="profile-pics">
+              <input type="text" placeholder="What's happening?" id="LetOpeninput">
+            </div>
+            <div class="privacy">
+              <span id="LetOpen"
+                style="color:rgb(29, 161, 242); padding-left:80px; padding-bottom:20px; margin-bottom:20px; width:90%; margin-left:30px;  display:none; border-bottom:1px solid rgba(112, 111, 111, 0.163);">Everyone
+                can reply</span>
+            </div>
+            <div class="form-group-2">
+              <div class="post-icons">
+                <i class="far fa-image"></i>
+                <i class="far fa-file-image"></i>
+                <i class="fas fa-stream"></i>
+                <i class="far fa-smile"></i>
+                <i class="far fa-calendar-check"></i>
+              </div>
+              <button class="btn" type="submit" id="TweetShow">Tweet</button>
+            </div>
+          </form>
+
+        </div>
+        <!-- User Content -->
+        <div class="tweets">
+          <div id="Wrapper" class="wrapper">
+            <div class="overlay2">
+
+            </div>
+            <div class="both-item">
+              <div class="close-section">
+                <a href="">&times;</a>
+                <div class="both-flex">
+                  <div class="image-flx">
+                    <img src="/img/profile4.jpg" alt="">
+                  </div>
+                  <div class="people-see">
+                    <select>
+                      <h1>Choose audience</h1>
+                      <option>Everyone</option>
+                      <option id="twitterCycle">Twitter circle</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="input-box">
+              <div class="tweet-area">
+                <span class="placeholder">What's happening?</span>
+                <div class="input editable" contenteditable="true" spellcheck="false"></div>
+                <div class="input readonly" contenteditable="true" spellcheck="false"></div>
+              </div>
+              <div class="privacy">
+                <i class="fas fa-globe-asia"></i>
+                <span id="Everyone">Everyone can reply</span>
+              </div>
+            </div>
+            <div class="bottom">
+              <ul class="icons">
+                <li><i class="uil uil-capture"></i></li>
+                <li><i class="far fa-file-image"></i></li>
+                <li><i class="fas fa-map-marker-alt"></i></li>
+                <li><i class="far fa-grin"></i></li>
+                <li><i class="far fa-user"></i></li>
+              </ul>
+              <div class="content">
+                <span class="counter">100</span>
+                <button id="NoOne">Tweet</button>
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="poppp">
+            <div id="overlay" class="overlay"></div>
+            <div id="poppup" class="popup-box">
+              <h1>Unfollow @Dev_suite</h1>
+              <p>Their Tweets will no longer show up in your home timeline. You can still view their profile, unless
+                their
+                Tweets are protected. </p>
+              <button id="Unfollow"><a style="color: #fff;" href="">Unfollow</a></button>
+              <button id="Cancle"><a style="color: #000;" href="">Cancle</a></button>
+            </div>
+          </div>
+        </div>
+        <div class="tweets">
+          <div class="user-pics"><img src="./img/user2.jpg" alt="user2"></div>
+          <div class="user-content-box">
+            <div class="user-names">
+              <h1 class="full-name">Muyideen.js</h1>
+              <p class="user-name">@abolax_123</p>
+
+              <p class="time"> . 1hr</p>
+            </div>
+
+            <div class="user-content">
+              <p>Hey guys 👋
+                Over the past few weeks I’ve been working on my portfolio and creating landing pages ranging from
+                e-commerce, Tech hub and Web3.
+                I’ve just completed my first Web3 landing page project kindly check through and comment. Open to
+                corrections and suggestions. Link 👇🏽
+            </div>
+
+            <div class="content-icons">
+              <i class="far fa-comment blue"> 2k</i>
+              <i class="fas fa-retweet green" id="Green"> 5,678</i>
+              <i class="far fa-heart red"> 36.7k</i>
+              <i class="fas fa-chevron-up blue"></i>
+            </div>
+
+          </div>
+        </div>
+        <div class="tweets">
+          <div class="user-pics"><img src="./img/user2.jpg" alt="user2"></div>
+          <div class="user-content-box">
+            <div class="user-names">
+              <h1 class="full-name">Muyideen.js</h1>
+              <p class="user-name">@abolax_123</p>
+
+              <p class="time"> . 1hr</p>
+            </div>
+
+            <div class="user-content">
+              <p>Hey guys 👋
+                Over the past few weeks I’ve been working on my portfolio and creating landing pages ranging from
+                e-commerce, Tech hub and Web3.
+                I’ve just completed my first Web3 landing page project kindly check through and comment. Open to
+                corrections and suggestions. Link 👇🏽
+            </div>
+
+            <div class="content-icons">
+              <i class="far fa-comment blue"> 2k</i>
+              <i class="fas fa-retweet green" id="Green"> 5,678</i>
+              <i class="far fa-heart red"> 36.7k</i>
+              <i class="fas fa-chevron-up blue"></i>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="tweets">
+          <div class="user-pics"><img src="./img/user1.jpg" alt="user1"></div>
+          <div class="user-content-box">
+            <div class="user-names">
+              <h1 class="full-name">Wittig Lyon.ex</h1>
+              <p class="user-name">@ibn_wittig
+              </p>
+
+              <p class="time"> . 2hrs</p>
+            </div>
+
+            <div class="user-content">
+              <p>Announcing to you the birth of our sister company 🚚🏍 for your swift, easy and safe deliveries.
+                This October!</p>
+              <img src="./img/content1.jpg" alt="content1">
+            </div>
+
+            <div class="content-icons">
+              <i class="far fa-comment blue"> 273</i>
+              <i class="fas fa-retweet green" id="Green"> 4,667</i>
+              <i class="far fa-heart red"> 3k</i>
+              <i class="fas fa-chevron-up blue"></i>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="tweets">
+          <div class="user-pics"><img src="./img/user4.jpg" alt="user4"></div>
+          <div class="user-content-box">
+            <div class="user-names">
+              <h1 class="full-name">
+                Khalipha Burna🇳🇬</h1>
+              <p class="user-name">@CallMeKhalipha3</p>
+
+              <p class="time"> . 4hrs</p>
+            </div>
+
+            <div class="user-content">
+              <p>“Everything i did, girl i put your first”
+                “But she still said I wasn’t man enough”
+
+                I go need like one million RTs for my GOAT
+                <a href="" style="text-decoration:none; color:rgb(17, 171, 171);"> @burnaboy</a>
+                to see this Last Last Cover🥺🤲🏾
+
+                Please stream here on Audiomack only🤲🏾
+                <a href="" style="text-decoration:none; color:rgb(17, 171, 171);">
+                  https://audiomack.com/callmekhalipha/song/khalipha-lastlast-cover
+
+                  #LoveDamini #LastLast #Burnaboy</a></p>
+            </div>
+
+            <div class="content-icons">
+              <i class="far fa-comment blue"> 1k</i>
+              <i class="fas fa-retweet green" id="Green"> 2,466</i>
+              <i class="far fa-heart red">300</i>
+              <i class="fas fa-chevron-up blue"></i>
+            </div>
+
+          </div>
+        </div>
+
+        <section class="follow-users-box">
+
+          <div class="follow-header">
+            <h1 class="main-text">Who to follow</h1>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+
+          <div class="follow-user">
+            <div class="related-followers">
+              <p class="sub-text"><i class="fas fa-user"></i> abolax_123 and 235 others follow</p>
+            </div>
+
+            <div class="user-profile">
+              <div class="user-pics"><img src="./img/user6.jpg" alt="user6">
+              </div>
+
+              <div class="user-profile-content">
+                <div class="title-container">
+                  <div class="user-names">
+                    <div class="full-name">
+                      <h1 class="main-text">Devsuite #KBTC22</h1>
+                    </div>
+                    <div class="user-name">
+                      <p class="sub-text">@Dev_suite
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="follow-btn"><a href="#" id="showMe" data-hover="Unfollow">following</a></div>
+
+                </div>
+                <div class="bio-container">
+                  <p>JavaScript Series: Project 5 - Random Quote Generator
+                    👉Previous -> forEach()
+
+                    📝I post articles on HTML, CSS , JavaScript and stuff related to Web Development.
+                    Follow
+                    <a href="" style="text-decoration:none; color:rgb(17, 171, 171);">
+                      @Dev_suite</a>
+
+
+                    <a href="" style="text-decoration:none; color:rgb(17, 171, 171);">
+                      #100DaysOfCode #javascript #programming #coding #laptop</a></p>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="follow-user">
+            <div class="related-followers">
+              <p class="sub-text"><i class="fas fa-user"></i> abolax_123 and 1,353 others follow</p>
+            </div>
+
+            <div class="user-profile">
+              <div class="user-pics"><img src="./img/user7.jpg" alt="user7">
+              </div>
+
+              <div class="user-profile-content">
+                <div class="title-container">
+                  <div class="user-names">
+                    <div class="full-name">
+                      <h1 class="main-text">Olowoniyi Daniel</h1>
+                    </div>
+
+                    <div class="user-name">
+                      <p class="sub-text">@iamdanztee
+                      </p>
+                    </div>
+
+                  </div>
+
+                  <div class="follow-btn"><a href="#" id="showMe" data-hover="Unfollow">following</a></div>
+
+                </div>
+                <div class="bio-container">
+                  <p>Remember Asake talk say e dey deliver stable...
+                    This guy dey deliver abeg </p>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="follow-user">
+            <div class="related-followers">
+              <p class="sub-text"><i class="fas fa-user"></i>abolax_123 and 340 others follow</p>
+            </div>
+
+            <div class="user-profile">
+              <div class="user-pics"><img src="./img/user8.jpg" alt="user8">
+              </div>
+
+              <div class="user-profile-content">
+                <div class="title-container">
+                  <div class="user-names">
+                    <div class="full-name">
+                      <h1 class="main-text">MALhub</h1>
+                    </div>
+
+                    <div class="user-name">
+                      <p class="sub-text">@malhubng</p>
+                    </div>
+
+                  </div>
+
+                  <div class="follow-btn"><a href="#" id="showMe" data-hover="Unfollow">following</a></div>
+
+                </div>
+                <div class="bio-container">
+                  <p>Don't miss out on our next meetup!
+
+                    Adewale Adisa is a results oriented individual with significant and verifiable experience in
+                    developing and executing corporate development initiatives.
+
+                    <a href="" style="text-decoration:none; color:rgb(17, 171, 171);">
+                      RSVP Link: https://startubuild.eventbrite.com
+
+                      #KWISN #StartupBuild</a></p>
+                </div>
+
+              </div>
+
+            </div>
+
+
+          </div>
+
+          <div id="clickShowMore" style="display: none;">
+            <div class="follow-user">
+              <div class="related-followers">
+                <p class="sub-text"><i class="fas fa-user"></i> abolax_123 and 1,353 others follow</p>
+              </div>
+
+              <div class="user-profile">
+                <div class="user-pics"><img src="./img/user7.jpg" alt="user7">
+                </div>
+
+                <div class="user-profile-content">
+                  <div class="title-container">
+                    <div class="user-names">
+                      <div class="full-name">
+                        <h1 class="main-text">Olowoniyi Daniel</h1>
+                      </div>
+
+                      <div class="user-name">
+                        <p class="sub-text">@iamdanztee
+                        </p>
+                      </div>
+
+                    </div>
+
+                    <div class="follow-btn"><a href="#" id="showMe" data-hover="Unfollow">following</a></div>
+
+                  </div>
+                  <div class="bio-container">
+                    <p>Remember Asake talk say e dey deliver stable...
+                      This guy dey deliver abeg </p>
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="follow-user">
+              <div class="related-followers">
+                <p class="sub-text"><i class="fas fa-user"></i> abolax_123 and 1,353 others follow</p>
+              </div>
+
+              <div class="user-profile">
+                <div class="user-pics"><img src="./img/user7.jpg" alt="user7">
+                </div>
+
+                <div class="user-profile-content">
+                  <div class="title-container">
+                    <div class="user-names">
+                      <div class="full-name">
+                        <h1 class="main-text">Olowoniyi Daniel</h1>
+                      </div>
+
+                      <div class="user-name">
+                        <p class="sub-text">@iamdanztee
+                        </p>
+                      </div>
+
+                    </div>
+
+                    <div class="follow-btn"><a href="#" id="showMe" data-hover="Unfollow">following</a></div>
+
+                  </div>
+                  <div class="bio-container">
+                    <p>Remember Asake talk say e dey deliver stable...
+                      This guy dey deliver abeg </p>
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="follow-user">
+              <div class="related-followers">
+                <p class="sub-text"><i class="fas fa-user"></i> abolax_123 and 1,353 others follow</p>
+              </div>
+
+              <div class="user-profile">
+                <div class="user-pics"><img src="./img/user7.jpg" alt="user7">
+                </div>
+
+                <div class="user-profile-content">
+                  <div class="title-container">
+                    <div class="user-names">
+                      <div class="full-name">
+                        <h1 class="main-text">Olowoniyi Daniel</h1>
+                      </div>
+
+                      <div class="user-name">
+                        <p class="sub-text">@iamdanztee
+                        </p>
+                      </div>
+
+                    </div>
+
+                    <div class="follow-btn"><a href="#" id="showMe" data-hover="Unfollow">following</a></div>
+
+                  </div>
+                  <div class="bio-container">
+                    <p>Remember Asake talk say e dey deliver stable...
+                      This guy dey deliver abeg </p>
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+            <div class="follow-user">
+              <div class="related-followers">
+                <p class="sub-text"><i class="fas fa-user"></i> abolax_123 and 1,353 others follow</p>
+              </div>
+
+              <div class="user-profile">
+                <div class="user-pics"><img src="./img/user7.jpg" alt="user7">
+                </div>
+
+                <div class="user-profile-content">
+                  <div class="title-container">
+                    <div class="user-names">
+                      <div class="full-name">
+                        <h1 class="main-text">Olowoniyi Daniel</h1>
+                      </div>
+
+                      <div class="user-name">
+                        <p class="sub-text">@iamdanztee
+                        </p>
+                      </div>
+
+                    </div>
+
+                    <div class="follow-btn"><a href="#" id="showMe" data-hover="Unfollow">following</a></div>
+
+                  </div>
+                  <div class="bio-container">
+                    <p>Remember Asake talk say e dey deliver stable...
+                      This guy dey deliver abeg </p>
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+          <div class="follow-footer">
+            <span id="showMore">Show more</span>
+          </div>
+
+        </section>
+
+        <div class="tweets">
+          <div class="user-pics"><img src="./img/user5.jpg" alt="user5"></div>
+          <div class="user-content-box">
+            <div class="user-names">
+              <hi class="full-name">WiCartIT
+              </hi>
+              <p class="user-name">@WicartIT</p>
+              <p class="time"> . 6hrs</p>
+            </div>
+
+            <div class="user-content">
+              <p>
+                New month to you all❤️
+              </p>
+              <img src="./img/content5.jpg" alt="content5">
+            </div>
+
+            <div class="content-icons">
+              <i class="far fa-comment blue" onclick="likebutton(this)""> 78</i>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter-x" viewBox="0 0 16 16">
+                <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865l8.875 11.633Z"/>
+              </svg>455
+            <!-- <i id=" Green" class=" far fa-retweet green"  onclick= "likebutton(this)"> 265</i> -->
+              <i class=" far fa-heart red" onclick="likebutton(this)"> 934</i>
+            <i class=" fas fa-chevron-up blue" onclick="likebutton(this)"></i>
+          </div>
+
+        </div>
+      </div>
+
+      <div class=" pagnation">
+                <a href="#">See more post</a>
+            </div>
+
+          </div>
+          <main id="secondOne">
+            <div class="trends" id="rightFlx">
+              <ul>
+                <li class="nav-list header">
+                  <h2>Trends for you</h2>
+                  <i class="fas fa-cog">
+                  </i>
+                <li class="nav-list">
+                  <div class="trend-list">
+                    <p class="sub-text">Trending in Nigeria</p>
+                    <p class="main-text">#BBNaija</p>
+                    <p class="sub-text">261K Tweets</p>
+                  </div>
+                  <div class="trend-icon">
+                    <i class="fas fa-chevron-down"></i>
+                  </div>
+                </li>
+                <li class="nav-list">
+                  <div class="trend-list">
+                    <p class="sub-text">Entertainment.Trending</p>
+                    <p class="main-text">#Reachel</p>
+                    <p class="sub-text">4,223 Tweets</p>
+                  </div>
+                  <div class="trend-icon">
+                    <i class="fas fa-chevron-down"></i>
+                  </div>
+                </li>
+                <li class="nav-list">
+                  <div class="trend-list">
+                    <p class="sub-text">Trending</p>
+                    <p class="main-text">#VSCode</p>
+                    <p class="sub-text">12k Tweets</p>
+                  </div>
+                  <div class="trend-icon">
+                    <i class="fas fa-chevron-down"></i>
+                  </div>
+                </li>
+                <li class="nav-list">
+                  <div class="trend-list">
+                    <p class="sub-text">Music.Trending</p>
+                    <p class="main-text">#Olamide</p>
+                    <p class="sub-text">1,245 Tweets</p>
+                  </div>
+                  <div class="trend-icon">
+                    <i class="fas fa-chevron-down"></i>
+                  </div>
+                </li>
+                <li class="nav-list">
+                  <div class="trend-list">
+                    <p class="sub-text">Trending in Nigeria</p>
+                    <p class="main-text">#Iphone14Pro</p>
+                    <p class="sub-text">1,345 Tweets</p>
+                  </div>
+                  <div class="trend-icon">
+                    <i class="fas fa-chevron-down"></i>
+                  </div>
+                </li>
+
+
+                <li class="nav-list"><a href="#">Show more</a></li>
+              </ul>
+            </div>
+          </main>
+    </main>
+
+
+    <div class="right-flex-container flex-item">
+      <div class="search-box" id="srchBox">
+        <i class="fas fa-search"></i>
+        <input type="text" placeholder="Search Twitter" id="ClickSearch">
+      </div>
+      <div class="search-people" id="SearchPeople">
+        <div class="loading">
+
+        </div>
+        <span style="font-size: 13px; text-align:center; color:rgba(145, 145, 145, 0.885); display:none;"
+          id="Trying">Try searching for people, topics, or keywords</span>
+
+        <div class="both-word">
+          <div class="frst-word">
+            <h1 id="Recently">Recently</h1>
+          </div>
+          <div class="second-word">
+            <span id="ClearAll">Clear all</span>
+          </div>
+        </div>
+        <div class="akoko" id="akoko">
+
+          <div class="search-flex" id="SearchFlex">
+            <div class="img-srch">
+              <img src="/img/profile2.jpg" alt="">
+            </div>
+            <div class="name-after">
+              <h1>Rheyham</h1>
+              <p>@Miz Curie</p>
+            </div>
+            <div class="cancle-box">
+              <span id="ClearBtn">&times;</span>
+            </div>
+
+
+          </div>
+
+          <div class="search-flex" id="SearchFlex2">
+            <div class="img-srch">
+              <img src="/img/user4.jpg" alt="">
+            </div>
+            <div class="name-after">
+              <h1>Khalipha.</h1>
+              <p>@Khalipha</p>
+            </div>
+            <div class="cancle-box">
+              <span id="ClearBtn2">&times;</span>
+            </div>
+
+
+          </div>
+
+          <div class="search-flex" id="SearchFlex3">
+            <div class="img-srch">
+              <img src="/img/content5.jpg" alt="">
+            </div>
+            <div class="name-after">
+              <h1>wicart_IT</h1>
+              <p>@WiCartit</p>
+            </div>
+            <div class="cancle-box">
+              <span id="ClearBtn3">&times;</span>
+
+            </div>
+
+
+          </div>
+
+
+        </div>
+      </div>
+
+
+      <div class="trends" id="rightFlx">
+        <ul>
+          <li class="nav-list header">
+            <h2>Trends for you</h2>
+            <i class="fas fa-cog">
+            </i>
+          <li class="nav-list">
+            <div class="trend-list">
+              <p class="sub-text">Trending in Nigeria</p>
+              <p class="main-text">#BBNaija</p>
+              <p class="sub-text">261K Tweets</p>
+            </div>
+            <div class="trend-icon">
+              <i class="fas fa-chevron-down"></i>
+            </div>
+          </li>
+          <li class="nav-list">
+            <div class="trend-list">
+              <p class="sub-text">Entertainment.Trending</p>
+              <p class="main-text">#Reachel</p>
+              <p class="sub-text">4,223 Tweets</p>
+            </div>
+            <div class="trend-icon">
+              <i class="fas fa-chevron-down"></i>
+            </div>
+          </li>
+          <li class="nav-list">
+            <div class="trend-list">
+              <p class="sub-text">Trending</p>
+              <p class="main-text">#VSCode</p>
+              <p class="sub-text">12k Tweets</p>
+            </div>
+            <div class="trend-icon">
+              <i class="fas fa-chevron-down"></i>
+            </div>
+          </li>
+          <li class="nav-list">
+            <div class="trend-list">
+              <p class="sub-text">Music.Trending</p>
+              <p class="main-text">#Olamide</p>
+              <p class="sub-text">1,245 Tweets</p>
+            </div>
+            <div class="trend-icon">
+              <i class="fas fa-chevron-down"></i>
+            </div>
+          </li>
+          <li class="nav-list">
+            <div class="trend-list">
+              <p class="sub-text">Trending in Nigeria</p>
+              <p class="main-text">#Iphone14Pro</p>
+              <p class="sub-text">1,345 Tweets</p>
+            </div>
+            <div class="trend-icon">
+              <i class="fas fa-chevron-down"></i>
+            </div>
+          </li>
+
+
+          <li class="nav-list"><a href="#">Show more</a></li>
+        </ul>
+      </div>
+
+      <div class="right-footer">
+        <div class="footer-links">
+          <a href="#" class="sub-text">Terms</a>
+          <a href="#" class="sub-text">Privacy policy</a>
+          <a href="#" class="sub-text">Ads info</a>
+          <a href="#" class="sub-text">more</a>
+          <i class="fas fa-chevron-down sub-text"></i>
+        </div>
+        <div class="footer-copyright">
+          <p class="sub-text">&copy; 2020 Twitter, Inc.</p>
+        </div>
+        <div class="first-itm">
+          <div class="like-people">
+            <h1>Who to follow</h1>
+            <div class="flx-me">
+              <div class="img-sec">
+                <img src="/img/profile1.jpg" alt="">
+                <div class="hvr-elmt">
+
+                </div>
+              </div>
+              <div class="txt-cntnt">
+                <h3>Jawad Dheini</h3>
+                <p>@JawadDheini456</p>
+              </div>
+              <div class="btn-cntnt">
+                <button id="BuTTon"><a href="#">Follow</a></button>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="like-people">
+            <div class="flx-me">
+              <div class="img-sec">
+                <img src="/img/profilee.jpg" alt="">
+              </div>
+              <div class="txt-cntnt">
+                <h3>Jawad Dheini</h3>
+                <p>@JawadDheini456</p>
+              </div>
+              <div class="btn-cntnt">
+                <button id="BuTTon"><a href="#">Follow</a></button>
+              </div>
+            </div>
+          </div>
+
+          <div class="like-people">
+            <div class="flx-me">
+              <div class="img-sec">
+                <img src="/img/profile4.jpg" alt="">
+              </div>
+              <div class="txt-cntnt">
+                <h3>Jawad Dheini</h3>
+                <p>@JawadDheini456</p>
+              </div>
+              <div class="btn-cntnt">
+                <button id="BuTTon"><a href="#">Follow</a></button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="message-box" id="messageBox">
+          <div class="fix-them">
+            <div class="nsg-bx">
+              <h1>Messages</h1>
+            </div>
+            <div class="svg-flx">
+              <img style="padding-left:40px;" src="/img/mail.png" alt="">
+              <img id="CloseBox" src="/img/up-arrows.png" alt="">
+            </div>
+          </div>
+          <!-- <div class="msg-txt" style="padding-top:15%;" id="msgTxt">
+                <div class="msg-none">
+                  <h1>No Messages Yet</h1>
+                </div> -->
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  </div>
+
+
+  <script>
+    function likebutton(x) {
+      x.classList.classList.toggle("fas")
+    }
+  </script>
+</body>
+
+</html>

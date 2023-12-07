@@ -1,0 +1,63 @@
+.toggle {
+    display: none;
+}
+
+.nav-links {
+    z-index: 999;
+}
+
+/* .home {
+    z-index: -1;
+} */
+
+.show {
+    display: block !important;
+}
+
+
+
+
+
+@media screen and (max-width:768px){
+    html,body{
+        overflow-x: hidden;
+        width: 100%;
+    }
+    .post-icons i{
+        font-size: 1rem;
+    }
+    .toggle {
+        display: block;
+        margin-top: 5px;
+        margin-left: 12px;
+        cursor: pointer;
+        position: fixed;
+        z-index: 999;
+    }
+
+    .nav-links, .tweet, .profile-box, .right-flex-container{
+        display: none;
+    }
+    
+    .main-flex-container {
+        display: block;
+    }
+    .home h1 {
+        position: relative;
+        left: 35%;
+    }
+    .home{
+        position: fixed;
+        width: 100%;
+    }
+    .post-tweet{
+        margin-top: 15%;
+    }
+    .left-flex-container {
+        z-index: 1;
+    }
+}
+
+
+
+
