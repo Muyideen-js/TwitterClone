@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Twitter Clone</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/all.css">
+  <link rel="stylesheet" href="responsiveness.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&family=Russo+One&family=Secular+One&display=swap"
+    rel="stylesheet">
+  <script defer src="script.js"></script>
+</head>
+
+<body>
+ 
+  <div class="main-flex-container">
+    <div class="toggle">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-list"
+        viewBox="0 0 16 16">
+        <path fill-rule="evenodd"
+          d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+      </svg>
+    </div>
+    <div class="left-flex-container flex-item">
+      <div class="nav-links">
+        <ul>
+
+          <li class="nav-items logo"><a href="#"><i class="fab fa-twitter"></i></a></li>
+          <li class="nav-items current-page"><a href="#"><i class="fas fa-home"></i> Home</a></li>
+          <li class="nav-items" id="Explore"><a href="#"><i class="fas fa-hashtag"></i> Explore</a></li>
+          <li class="nav-items"><a href="#"><i class="far fa-bell"></i> Notifications</a></li>
+          <li class="nav-items"><a href="#"><i class="far fa-envelope"></i> Messages</a></li>
+          <li class="nav-items"><a href="#"><i class="far fa-bookmark"></i> Bookmarks</a></li>
+          <li class="nav-items"><a href="#"><i class="far fa-list-alt"></i> Lists</a></li>
+          <li class="nav-items"><a href="#"><i class="far fa-user"></i> Profile</a></li>
+          <li class="nav-items"><a href="#"><i class="fas fa-ellipsis-h more-icon"></i> More</a></li>
+        </ul>
+      </div>
+      <div class="tweet"><a id="TweetModal" href="#">Tweet</a>
+
+      </div>
+
+
+      <div class="profile-box">
+        <img src="./img/profile.jpg" alt="profile">
+        <div class="profile-link">
+          <p class="full-name">Muyideen.js</p>
+          <p class="user-name">@abolax_123</p>
+        </div>
+        <div class="options-icon"><i class="fas fa-caret-down"></i></div>
+      </div>
+    </div>
+
+  
+          <div class="trends" id="rightFlx" style="width: 50%;">
+            <ul>
+              <li class="nav-list header">
+                <h2>Trends for you</h2>
+                <i class="fas fa-cog">
+                </i>
+              <li class="nav-list">
+                <div class="trend-list">
+                  <p class="sub-text">Trending in Nigeria</p>
+                  <p class="main-text">#BBNaija</p>
+                  <p class="sub-text">261K Tweets</p>
+                </div>
+                <div class="trend-icon">
+                  <i class="fas fa-chevron-down"></i>
+                </div>
+              </li>
+              <li class="nav-list">
+                <div class="trend-list">
+                  <p class="sub-text">Entertainment.Trending</p>
+                  <p class="main-text">#Farouk</p>
+                  <p class="sub-text">4,223 Tweets</p>
+                </div>
+                <div class="trend-icon">
+                  <i class="fas fa-chevron-down"></i>
+                </div>
+              </li>
+              <li class="nav-list">
+                <div class="trend-list">
+                  <p class="sub-text">Trending</p>
+                  <p class="main-text">#VSCode</p>
+                  <p class="sub-text">12k Tweets</p>
+                </div>
+                <div class="trend-icon">
+                  <i class="fas fa-chevron-down"></i>
+                </div>
+              </li>
+              <li class="nav-list">
+                <div class="trend-list">
+                  <p class="sub-text">Music.Trending</p>
+                  <p class="main-text">#Olamide</p>
+                  <p class="sub-text">1,245 Tweets</p>
+                </div>
+                <div class="trend-icon">
+                  <i class="fas fa-chevron-down"></i>
+                </div>
+              </li>
+              <li class="nav-list">
+                <div class="trend-list">
+                  <p class="sub-text">Trending in Nigeria</p>
+                  <p class="main-text">#Iphone14Pro</p>
+                  <p class="sub-text">1,345 Tweets</p>
+                </div>
+                <div class="trend-icon">
+                  <i class="fas fa-chevron-down"></i>
+                </div>
+              </li>
+
+
+              <li class="nav-list"><a href="#">Show more</a></li>
+            </ul>
+          </div>
+        </main>
+
+
+        <div class="right-flex-container flex-item" >
+          <div class="search-box" id="srchBox">
+            <i class="fas fa-search"></i>
+            <input type="text" placeholder="Search Twitter" id="ClickSearch">
+          </div>
+          <div class="search-people" id="SearchPeople">
+            <div class="loading">
+
+            </div>
+            <span style="font-size: 13px; text-align:center; color:rgba(145, 145, 145, 0.885); display:none;"
+              id="Trying">Try searching for people, topics, or keywords</span>
+
+            <div class="both-word">
+              <div class="frst-word">
+                <h1 id="Recently">Recently</h1>
+              </div>
+              <div class="second-word">
+                <span id="ClearAll">Clear all</span>
+              </div>
+            </div>
+            <div class="akoko" id="akoko">
+
+              <div class="search-flex" id="SearchFlex">
+                <div class="img-srch">
+                  <img src="/img/profile2.jpg" alt="">
+                </div>
+                <div class="name-after">
+                  <h1>Rheyham</h1>
+                  <p>@Miz Curie</p>
+                </div>
+                <div class="cancle-box">
+                  <span id="ClearBtn">&times;</span>
+                </div>
+
+
+              </div>
+
+              <div class="search-flex" id="SearchFlex2">
+                <div class="img-srch">
+                  <img src="/img/user4.jpg" alt="">
+                </div>
+                <div class="name-after">
+                  <h1>Khalipha.</h1>
+                  <p>@Khalipha</p>
+                </div>
+                <div class="cancle-box">
+                  <span id="ClearBtn2">&times;</span>
+                </div>
+
+
+              </div>
+
+              <div class="search-flex" id="SearchFlex3">
+                <div class="img-srch">
+                  <img src="/img/content5.jpg" alt="">
+                </div>
+                <div class="name-after">
+                  <h1>wicart_IT</h1>
+                  <p>@WiCartit</p>
+                </div>
+                <div class="cancle-box">
+                  <span id="ClearBtn3">&times;</span>
+
+                </div>
+
+
+              </div>
+
+
+            </div>
+          </div>
+          
+
+    
+            <div class="first-itm" style="width: 80%;">
+              <div class="like-people">
+                <h1>Who to follow</h1>
+                <div class="flx-me">
+                  <div class="img-sec">
+                    <img src="/img/profile1.jpg" alt="">
+                    <div class="hvr-elmt">
+
+                    </div>
+                  </div>
+                  <div class="txt-cntnt">
+                    <h3>Jawad Dheini</h3>
+                    <p>@JawadDheini456</p>
+                  </div>
+                  <div class="btn-cntnt">
+                    <button id="BuTTon"><a href="#">Follow</a></button>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="like-people">
+                <div class="flx-me">
+                  <div class="img-sec">
+                    <img src="/img/profilee.jpg" alt="">
+                  </div>
+                  <div class="txt-cntnt">
+                    <h3>Jawad Dheini</h3>
+                    <p>@JawadDheini456</p>
+                  </div>
+                  <div class="btn-cntnt">
+                    <button id="BuTTon"><a href="#">Follow</a></button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="like-people">
+                <div class="flx-me">
+                  <div class="img-sec">
+                    <img src="/img/profile4.jpg" alt="">
+                  </div>
+                  <div class="txt-cntnt">
+                    <h3>Jawad Dheini</h3>
+                    <p>@JawadDheini456</p>
+                  </div>
+                  <div class="btn-cntnt">
+                    <button id="BuTTon"><a href="#">Follow</a></button>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <div class="message-box" id="messageBox">
+              <div class="fix-them">
+                <div class="nsg-bx">
+                  <h1>Messages</h1>
+                </div>
+                <div class="svg-flx">
+                  <img style="padding-left:40px;" src="/img/mail.png" alt="">
+                  <img id="CloseBox" src="/img/up-arrows.png" alt="">
+                </div>
+              </div>
+              <!-- <div class="msg-txt" style="padding-top:15%;" id="msgTxt">
+                <div class="msg-none">
+                  <h1>No Messages Yet</h1>
+                </div> -->
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+ 
+
+      <script>
+        function likebutton(x) {
+          x.classList.classList.toggle("fas")
+        }
+      </script>
+</body>
+
+</html>
